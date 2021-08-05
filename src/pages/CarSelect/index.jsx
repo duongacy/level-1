@@ -46,28 +46,28 @@ export default class CarSelect extends Component {
               <Card.Body>
                 <Button
                   variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
+                  className="d-block w-100 text-start my-1 rounded-0 border"
                 >
                   <Image src="images/icons/icon-black.jpg" height={40} />
                   <span className="mx-2">Black</span>
                 </Button>
                 <Button
                   variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
+                  className="d-block w-100 text-start my-1 rounded-0 border"
                 >
                   <Image src="images/icons/icon-red.jpg" height={40} />
                   <span className="mx-2">Red</span>
                 </Button>
                 <Button
                   variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
+                  className="d-block w-100 text-start my-1 rounded-0 border"
                 >
                   <Image src="images/icons/icon-silver.jpg" height={40} />
                   <span className="mx-2">Silver</span>
                 </Button>
                 <Button
                   variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
+                  className="d-block w-100 text-start my-1 rounded-0 border"
                 >
                   <Image src="images/icons/icon-steel.jpg" height={40} />
                   <span className="mx-2">Steel</span>
