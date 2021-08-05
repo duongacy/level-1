@@ -8,101 +8,59 @@ import {
   Button,
   Table,
 } from "react-bootstrap";
+
 import { listCar } from "../../data/listCar";
+import CarDetail from "./components/CarDetail";
+import ColorSelect from "./components/ColorSelect";
+import WheelSelect from "./components/WheelSelect";
 
 export default class CarSelect extends Component {
   constructor(props) {
     super(props);
-    console.log("list car: ", listCar);
+    const carDefault = listCar.find((item) => item.color === "black");
+    console.log("default car ne:", carDefault);
+
+    this.state = {
+      colorSelected: "black",
+      wheelSelected: "wheel-1",
+      carSelected: carDefault,
+    };
   }
+  changeColor = (color) => {
+    const carFind = listCar.find((item) => item.color === color);
+    this.setState({
+      carSelected: carFind,
+      colorSelected: color,
+    });
+  };
+  changeWheel = (wheel) => {
+    this.setState({
+      wheelSelected: wheel,
+    });
+  };
   render() {
+    const { wheelSelected, colorSelected, carSelected } = this.state;
     return (
       <Container className="py-5">
         <Row>
           <Col lg={8}>
-            <Image src="images/black/wheel-1.jpg" alt="" fluid />
+            <Image
+              src={`images/${colorSelected}/${wheelSelected}.jpg`}
+              alt=""
+              fluid
+            />
             <h3 className="mt-3"> See more features</h3>
-            <Table responsive="sm">
-              <tbody>
-                <tr>
-                  <th>Color</th>
-                  <td>Black</td>
-                </tr>
-                <tr>
-                  <th>Price</th>
-                  <td>$20000</td>
-                </tr>
-                <tr>
-                  <th>Engine type</th>
-                  <td>Inline 4-Cylinder</td>
-                </tr>
-                <tr>
-                  <th>Displacement</th>
-                  <td>1996 cc</td>
-                </tr>
-              </tbody>
-            </Table>
+            <CarDetail car={carSelected} />
           </Col>
           <Col lg={4} className="d-flex flex-column gap-3">
-            <Card>
-              <Card.Header>Featured</Card.Header>
-              <Card.Body>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-black.jpg" height={40} />
-                  <span className="mx-2">Black</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-red.jpg" height={40} />
-                  <span className="mx-2">Red</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-silver.jpg" height={40} />
-                  <span className="mx-2">Silver</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-steel.jpg" height={40} />
-                  <span className="mx-2">Steel</span>
-                </Button>
-              </Card.Body>
-            </Card>
-            <Card>
-              <Card.Header>Wheel</Card.Header>
-              <Card.Body>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
-                >
-                  <Image src="images/icons/icon-wheel-1.jpg" height={40} />
-                  <span className="mx-2">Wheel 1</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
-                >
-                  <Image src="images/icons/icon-wheel-2.jpg" height={40} />
-                  <span className="mx-2">Wheel 2</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
-                >
-                  <Image src="images/icons/icon-wheel-3.jpg" height={40} />
-                  <span className="mx-2">Wheel-3</span>
-                </Button>
-              </Card.Body>
-            </Card>
+            <ColorSelect
+              color={colorSelected}
+              callbackChange={this.changeColor}
+            />
+            <WheelSelect
+              wheel={wheelSelected}
+              callbackChange={this.changeWheel}
+            />
           </Col>
         </Row>
       </Container>
