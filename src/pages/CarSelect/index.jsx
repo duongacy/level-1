@@ -9,75 +9,56 @@ import {
   Table,
 } from "react-bootstrap";
 
+import { listCar } from "../../data/listCar";
+import CarDetail from "./components/CarDetail";
+import SelectColor from "./components/SelectColor";
 export default class CarSelect extends Component {
+  constructor(props) {
+    super(props);
+    console.log(listCar);
+    const carSelected = listCar.find((item) => item.color === "black");
+    console.log("car selected: ", carSelected);
+    this.state = {
+      colorSelected: "black",
+      wheelSelected: "wheel-1",
+      carSelected: carSelected,
+    };
+  }
+
+  changeColor = (color) => {
+    console.log("color ne", color);
+    const carSelected = listCar.find((item) => item.color === color);
+    this.setState({
+      colorSelected: color,
+      carSelected: carSelected,
+    });
+  };
+
+  changeWheel = (wheel) => {
+    this.setState({
+      wheelSelected: wheel,
+    });
+  };
   render() {
     return (
       <Container className="py-5">
         <Row>
           <Col lg={8}>
-            <Image src="images/black/wheel-1.jpg" alt="" fluid />
-            <Table responsive="sm mt-3">
-              <thead>
-                <h3> See more features</h3>
-              </thead>
-              <tbody>
-                  <tr>
-                      <th>Color</th>
-                      <td>Black</td>
-                  </tr>
-                  <tr>
-                      <th>Price</th>
-                      <td>$20000</td>
-                  </tr>
-                  <tr>
-                      <th>Engine type</th>
-                      <td>Inline 4-Cylinder</td>
-                  </tr>
-                  <tr>
-                      <th>Displacement</th>
-                      <td>1996 cc</td>
-                  </tr>
-              </tbody>
-            </Table>
+            <Image
+              src={`images/${this.state.colorSelected}/${this.state.wheelSelected}.jpg`}
+              alt=""
+              fluid
+            />
+            <h3 className="mt-3"> See more features</h3>
+            <CarDetail car={this.state.carSelected} />
           </Col>
           <Col lg={4} className="d-flex flex-column gap-3">
-            <Card>
-              <Card.Header>Featured</Card.Header>
-              <Card.Body>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-black.jpg" height={40} />
-                  <span className="mx-2">Black</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-red.jpg" height={40} />
-                  <span className="mx-2">Red</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-silver.jpg" height={40} />
-                  <span className="mx-2">Silver</span>
-                </Button>
-                <Button
-                  variant="transparent"
-                  className="d-block w-100 text-start my-1 rounded-0 border"
-                >
-                  <Image src="images/icons/icon-steel.jpg" height={40} />
-                  <span className="mx-2">Steel</span>
-                </Button>
-              </Card.Body>
-            </Card>
+            <SelectColor callbackChange={this.changeColor} colorSelected={this.state.colorSelected}/>
             <Card>
               <Card.Header>Wheel</Card.Header>
               <Card.Body>
                 <Button
+                  onClick={() => this.changeWheel("wheel-1")}
                   variant="transparent"
                   className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
                 >
@@ -85,6 +66,7 @@ export default class CarSelect extends Component {
                   <span className="mx-2">Wheel 1</span>
                 </Button>
                 <Button
+                  onClick={() => this.changeWheel("wheel-2")}
                   variant="transparent"
                   className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
                 >
@@ -92,6 +74,7 @@ export default class CarSelect extends Component {
                   <span className="mx-2">Wheel 2</span>
                 </Button>
                 <Button
+                  onClick={() => this.changeWheel("wheel-3")}
                   variant="transparent"
                   className="d-block w-100 text-start my-1 rounded-0 border border-secondary"
                 >
