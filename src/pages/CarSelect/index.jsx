@@ -8,35 +8,38 @@ import {
   Button,
   Table,
 } from "react-bootstrap";
+import { listCar } from "../../data/listCar";
 
 export default class CarSelect extends Component {
+  constructor(props) {
+    super(props);
+    console.log("list car: ", listCar);
+  }
   render() {
     return (
       <Container className="py-5">
         <Row>
           <Col lg={8}>
             <Image src="images/black/wheel-1.jpg" alt="" fluid />
-            <Table responsive="sm mt-3">
-              <thead>
-                <h3> See more features</h3>
-              </thead>
+            <h3 className="mt-3"> See more features</h3>
+            <Table responsive="sm">
               <tbody>
-                  <tr>
-                      <th>Color</th>
-                      <td>Black</td>
-                  </tr>
-                  <tr>
-                      <th>Price</th>
-                      <td>$20000</td>
-                  </tr>
-                  <tr>
-                      <th>Engine type</th>
-                      <td>Inline 4-Cylinder</td>
-                  </tr>
-                  <tr>
-                      <th>Displacement</th>
-                      <td>1996 cc</td>
-                  </tr>
+                <tr>
+                  <th>Color</th>
+                  <td>Black</td>
+                </tr>
+                <tr>
+                  <th>Price</th>
+                  <td>$20000</td>
+                </tr>
+                <tr>
+                  <th>Engine type</th>
+                  <td>Inline 4-Cylinder</td>
+                </tr>
+                <tr>
+                  <th>Displacement</th>
+                  <td>1996 cc</td>
+                </tr>
               </tbody>
             </Table>
           </Col>
