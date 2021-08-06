@@ -1,12 +1,9 @@
 import React, { Component } from "react";
 import {
-  Card,
   Col,
   Container,
   Row,
-  Image,
-  Button,
-  Table,
+  Image
 } from "react-bootstrap";
 
 import { listCar } from "../../data/listCar";
