@@ -3,20 +3,29 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-do
 import SelectCar from './pages/SelectCar';
 import TryGlass from './pages/TryGlass';
 import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePage from './pages/Home';
+import BookTicket from './pages/BookTicket';
 
 function App() {
     return (
         <Router>
             <Header />
             <Switch>
-                <Route path="/car-select">
+                <Route path="/" exact>
+                    <HomePage />
+                </Route>
+                <Route path="/select-car">
                     <SelectCar />
                 </Route>
-                <Route path="/glass-try">
+                <Route path="/try-glass">
                     <TryGlass />
                 </Route>
+                <Route path="/book-ticket">
+                    <BookTicket />
+                </Route>
             </Switch>
-            <footer className="p-3 bg-secondary text-center text-white">© 2021 Copyright: MDBootstrap.com</footer>
+            <Footer />
         </Router>
     );
 }

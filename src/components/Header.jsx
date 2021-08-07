@@ -13,18 +13,33 @@ export default class Header extends React.Component {
                     </Navbar.Brand>
                     <Nav className="me-auto">
                         <NavLink
-                            to="/car-select"
+                            to="/"
+                            className="nav-link"
+                            activeClassName="text-white fw-bold"
+                            exact
+                        >
+                            Home
+                        </NavLink>
+                        <NavLink
+                            to="/select-car"
                             className="nav-link"
                             activeClassName="text-white fw-bold"
                         >
                             Select car
                         </NavLink>
                         <NavLink
-                            to="/glass-try"
+                            to="/try-glass"
                             className="nav-link"
                             activeClassName="text-white fw-bold"
                         >
                             Try glass
+                        </NavLink>
+                        <NavLink
+                            to="/book-ticket"
+                            className="nav-link"
+                            activeClassName="text-white fw-bold"
+                        >
+                            Book ticket
                         </NavLink>
                     </Nav>
                 </Container>

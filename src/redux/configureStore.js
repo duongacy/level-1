@@ -2,11 +2,12 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import reduxThunk from 'redux-thunk';
 import { carReducer } from './reducer/carReducer';
 import { glassReducer } from './reducer/glassReducer';
-// import { FakeBookAppReducer } from "./Reducer/FakeBookAppReducer";
+import { ticketReducer } from './reducer/ticketReducer';
 
 const rootReducer = combineReducers({
 	carState: carReducer,
-	glassState: glassReducer
+	glassState: glassReducer,
+	ticketState: ticketReducer
 });
 
 export const store = createStore(
