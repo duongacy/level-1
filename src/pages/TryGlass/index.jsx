@@ -7,7 +7,7 @@ import Models from './components/Models';
 class TryGlass extends Component {
     render() {
         return (
-            <div style={{ background: `url("images/glass/bg-2.jpg") no-repeat`, backgroundSize:"cover" ,  minHeight:"100vh" }} className="py-5">
+            <div style={{ background: `url("images/glass/bg-2.jpg") no-repeat`, backgroundSize:"cover", flex:"auto" }} className="py-5">
                 <Container>
                     <Models />
                     <ListButton />

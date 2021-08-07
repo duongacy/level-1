@@ -8,7 +8,7 @@ class SelectCar extends Component {
     render() {
         const { car } = this.props;
         return (
-            <Container className='py-5'>
+            <Container className="py-5" style={{ flex: 'auto' }}>
                 <Row>
                     <Col lg={8}>
                         <Image

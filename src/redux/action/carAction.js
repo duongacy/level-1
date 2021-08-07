@@ -1,12 +1,4 @@
-import { ADD_COMMENT } from "../types/carTypes";
 import * as carTypes from "../types/carTypes";
-
-export const addCommentAction = (userComment) => {
-    return {
-        type: ADD_COMMENT,
-        userComment: userComment
-    }
-}
 
 export const changeColor=(color)=>{
     return {
