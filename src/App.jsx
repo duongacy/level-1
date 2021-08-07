@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import CarSelect from './pages/CarSelect';
 import GlassTry from './pages/GlassTry';
 
