@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { changeGlassAction } from '../../redux/action/glassAction';
 import ListButton from './components/ListButton';
 import Models from './components/Models';
-class GlassTry extends Component {
+class TryGlass extends Component {
     render() {
         return (
             <div style={{ background: `url("images/glass/bg-2.jpg") no-repeat`, backgroundSize:"cover" ,  minHeight:"100vh" }} className="py-5">
@@ -31,4 +31,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(GlassTry);
+export default connect(mapStateToProps, mapDispatchToProps)(TryGlass);

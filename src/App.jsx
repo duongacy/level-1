@@ -1,8 +1,8 @@
 import './App.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
-import CarSelect from './pages/CarSelect';
-import GlassTry from './pages/GlassTry';
+import SelectCar from './pages/SelectCar';
+import TryGlass from './pages/TryGlass';
 
 function App() {
     return (
@@ -19,14 +19,14 @@ function App() {
                             className="nav-link"
                             activeClassName="text-white fw-bold"
                         >
-                            Car select
+                            Select car
                         </NavLink>
                         <NavLink
                             to="/glass-try"
                             className="nav-link"
                             activeClassName="text-white fw-bold"
                         >
-                            Glass try
+                            Try glass
                         </NavLink>
                     </Nav>
                 </Container>
@@ -34,10 +34,10 @@ function App() {
 
             <Switch>
                 <Route path="/car-select">
-                    <CarSelect />
+                    <SelectCar />
                 </Route>
                 <Route path="/glass-try">
-                    <GlassTry />
+                    <TryGlass />
                 </Route>
             </Switch>
         </Router>

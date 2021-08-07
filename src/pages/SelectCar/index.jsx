@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import CarDetail from './components/CarDetail';
 import ColorSelect from './components/ColorSelect';
 import WheelSelect from './components/WheelSelect';
-class CarSelect extends Component {
+class SelectCar extends Component {
     render() {
         const { car } = this.props;
         return (
@@ -35,4 +35,4 @@ const mapStateToProps = (root) => {
     };
 };
 
-export default connect(mapStateToProps)(CarSelect);
+export default connect(mapStateToProps)(SelectCar);
