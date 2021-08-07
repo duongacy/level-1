@@ -23,7 +23,7 @@ class ColorSelect extends Component {
 								transition: 'all .1s',
 							}}
 						>
-							<Image src={`images/icons/icon-${item.color}.jpg`} height={40} />
+							<Image src={`images/car/icons/icon-${item.color}.jpg`} height={40} />
 							<span className="mx-2 text-uppercase">{item.color}</span>
 						</Button>
 					))}
