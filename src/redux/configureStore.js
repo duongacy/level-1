@@ -1,11 +1,13 @@
-import { applyMiddleware, combineReducers, createStore } from "redux";
-import { FakeBookAppReducer } from "./Reducer/FakeBookAppReducer";
+import { applyMiddleware, combineReducers, createStore } from 'redux';
+import reduxThunk from 'redux-thunk';
+import { carReducer } from './reducer/carReducer';
+// import { FakeBookAppReducer } from "./Reducer/FakeBookAppReducer";
 
 const rootReducer = combineReducers({
-    FakeBookAppReducer,
+	carState: carReducer,
 });
 
 export const store = createStore(
-    rootReducer,
-    applyMiddleware(reduxThunk),
+	rootReducer,
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
