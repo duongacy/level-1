@@ -41,6 +41,13 @@ export default class Header extends React.Component {
                         >
                             Book ticket
                         </NavLink>
+                        <NavLink
+                            to="/ott"
+                            className="nav-link"
+                            activeClassName="text-white fw-bold"
+                        >
+                            OTT
+                        </NavLink>
                     </Nav>
                 </Container>
             </Navbar>

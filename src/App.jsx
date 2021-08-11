@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/Home';
 import BookTicket from './pages/BookTicket';
+import OTTPage from './pages/OTT';
 
 function App() {
     return (
@@ -23,6 +24,9 @@ function App() {
                 </Route>
                 <Route path="/book-ticket">
                     <BookTicket />
+                </Route>
+                <Route path="/ott">
+                    <OTTPage />
                 </Route>
             </Switch>
             <Footer />
