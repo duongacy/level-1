@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/Home';
 import BookTicket from './pages/BookTicket';
 import OTTPage from './pages/OTT';
+import TodoListPage from './pages/TodoList';
 
 function App() {
     return (
@@ -27,6 +28,9 @@ function App() {
                 </Route>
                 <Route path="/ott">
                     <OTTPage />
+                </Route>
+                <Route path="/todo-list">
+                    <TodoListPage />
                 </Route>
             </Switch>
             <Footer />

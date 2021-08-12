@@ -48,6 +48,13 @@ export default class Header extends React.Component {
                         >
                             OTT
                         </NavLink>
+                        <NavLink
+                            to="/todo-list"
+                            className="nav-link"
+                            activeClassName="text-white fw-bold"
+                        >
+                            Todo list
+                        </NavLink>
                     </Nav>
                 </Container>
             </Navbar>
