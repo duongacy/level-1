@@ -1,0 +1,2 @@
+export const  GET_ALL_STUDENT = "GET_ALL_STUDENT";
+export const  SET_UPDATE_STUDENT = "SET_UPDATE_STUDENT";

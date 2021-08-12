@@ -8,6 +8,7 @@ import HomePage from './pages/Home';
 import BookTicket from './pages/BookTicket';
 import OTTPage from './pages/OTT';
 import TodoListPage from './pages/TodoList';
+import StudentManagement from './pages/StudentManagement';
 
 function App() {
     return (
@@ -31,6 +32,9 @@ function App() {
                 </Route>
                 <Route path="/todo-list">
                     <TodoListPage />
+                </Route>
+                <Route path="/student-management">
+                    <StudentManagement />
                 </Route>
             </Switch>
             <Footer />

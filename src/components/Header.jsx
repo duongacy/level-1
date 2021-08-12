@@ -55,6 +55,13 @@ export default class Header extends React.Component {
                         >
                             Todo list
                         </NavLink>
+                        <NavLink
+                            to="/student-management"
+                            className="nav-link"
+                            activeClassName="text-white fw-bold"
+                        >
+                            Student management
+                        </NavLink>
                     </Nav>
                 </Container>
             </Navbar>
